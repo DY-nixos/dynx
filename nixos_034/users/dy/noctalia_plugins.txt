@@ -1,0 +1,47 @@
+{ lib, pkgs, inputs, ... }:
+{
+  imports = [
+    inputs.noctalia.homeModules.default
+  ];
+
+  programs.noctalia-shell = {
+      enable = true;
+
+      # 插件管理系统 (V2)
+      plugins = {
+        version = 2; # 使用新版插件管理系统
+
+        # 1. 添加插件源 (仓库)
+        sources = [
+          {
+            enabled = true;
+            name = "Official Noctalia Plugins";
+            url = "https://github.com/noctalia-dev/noctalia-plugins";
+          }
+        ];
+
+        # 2. 启用你需要的插件
+        states = {
+          clipper = {
+            enabled = true;
+            sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
+          };
+        };
+      };
+
+      # 3. 可选：为插件进行个性化设置
+      pluginSettings = {
+        # 以 clipper 插件为例，具体可配置项需查看插件说明
+        # clipper = {
+        #   maxItems = 50;
+        # };
+      };
+
+      # 4. Noctalia Shell 自身的全局设置
+      settings = {
+        # 官方推荐在这里设置 Material 3 颜色值等
+        # 配置结构可以参考 ~/.config/noctalia/settings.json 文件
+        # 或使用 `noctalia-shell ipc call state all | jq .settings` 命令获取当前设置
+    };
+  };
+}

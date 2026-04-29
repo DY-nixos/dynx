@@ -17,3 +17,5 @@ sudo nixos-rebuild boot --install-bootloader --flake .#
 
 cd ~/nixos-config
 sudo nixos-rebuild switch --flake .#dynx
+
+sudo nixos-rebuild switch --flake /home/dy/nixos-config#dynix
