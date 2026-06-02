@@ -1,6 +1,32 @@
 
 # 更新 inputs
+
+cd ~/nixos-config && cp flake.lock flake.lock.backup && sudo nix flake update
+
+
+cd ~/nixos-config - 进入你的配置目录
+
+&& - 然后
+
+cp flake.lock flake.lock.backup - 把 flake.lock 复制一份，名字叫 flake.lock.backup
+
+&& - 然后
+
+sudo nix flake update - 更新系统
+
 sudo nix flake update
+--------------
+# 1. 更新前（自动备份）
+cd ~/nixos-config && cp flake.lock flake.lock.backup && sudo nix flake update
+
+# 2. 如果更新后系统坏了，恢复
+cd ~/nixos-config && cp flake.lock.backup flake.lock
+
+# 3. 用旧版本重建
+sudo nixos-rebuild switch
+------------
+
+
 
 # 重建系统
 sudo nixos-rebuild switch --flake .#
