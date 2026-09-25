@@ -1,0 +1,9 @@
+{ config, pkgs, lib, ... }:
+let
+  mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
+  configDir = "/home/dy/nixos-config";
+in {
+  xdg.configFile = {
+    "noctalia/config.cpp".source = mkOutOfStoreSymlink "${configDir}/dotfiles/noctalia/config.cpp";
+  };
+}

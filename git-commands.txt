@@ -11,8 +11,8 @@ git push
 ========================================
 
 # 设置用户信息（首次使用必须）
-git config --global user.name "你的名字"
-git config --global user.email "你的邮箱@example.com"
+git config --global user.name "DY-nixos"
+git config --global user.email "798626979@qq.com"
 
 # 设置凭证缓存（记住密码/令牌，只需输入一次）
 git config --global credential.helper store
