@@ -18,16 +18,6 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # 添加 nixpak 输入
-    nixpak = {
-      url = "github:nixpak/nixpak";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # 添加 sops-nix 输入
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -35,7 +25,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs:
   let
     hostSystem = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -86,7 +76,6 @@
       lib.nixosSystem {
         specialArgs = { inherit inputs hostName; };
         modules = [
-          stylix.nixosModules.stylix
           sops-nix.nixosModules.sops  # ← 添加 sops-nix 系统模块
           { networking.hostName = hostName; }
           hostConfig
