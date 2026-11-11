@@ -1,0 +1,15 @@
+{
+  # 启用 X11 基础支持（SDDM 依赖）
+  services.xserver.enable = true;
+
+  # SDDM 显示管理器配置
+  services.displayManager.sddm = {
+    enable = true;
+    
+    # 启用 Wayland 支持（关键：Niri 和 Hyprland 都是 Wayland 合成器）
+    wayland.enable = true;
+  };
+
+  # 设置默认会话（可选，但建议明确指定）
+  #services.displayManager.defaultSession = "hyprland";  # 或 "niri"
+}

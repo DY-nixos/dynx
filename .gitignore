@@ -1,0 +1,5 @@
+# 隐藏的 git 元数据目录：不上传到 GitHub
+/.git/
+**/.git/
+**/.git.bak/
+**/.git.bak.*/

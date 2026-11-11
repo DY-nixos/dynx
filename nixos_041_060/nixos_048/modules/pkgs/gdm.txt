@@ -1,0 +1,14 @@
+{ config, pkgs, ... }:
+
+{
+  # 基础配置
+  services.xserver = {
+    enable = true;
+    layout = "us";
+  };
+  
+  # GDM + GNOME
+  services.displayManager.gdm.enable = true;
+  #services.xserver.desktopManager.gnome.enable = true;
+  
+}
