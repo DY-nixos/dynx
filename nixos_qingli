@@ -101,6 +101,12 @@ nix
     "d /var/tmp 1777 root root 14d"
   ];
 }
+-----这个好用
+sudo /run/current-system/bin/switch-to-configuration switch 2>/dev/null || true
+sudo nix-env -p /nix/var/nix/profiles/system --delete-generations old
+sudo nix-collect-garbage -d
+------
+
 
 9. 最激进的清理（谨慎使用）
 bash

@@ -1,0 +1,2 @@
+cd ~/nixos-config
+                               sudo nixos-rebuild switch --flake .#dynx --impure
