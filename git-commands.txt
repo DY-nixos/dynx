@@ -41,6 +41,36 @@ git remote -v
 # 修改远程仓库地址
 git remote set-url origin 新地址
 
+以后只需三条命令
+bash
+
+
+cd /home/dy/dynx
+git add -A
+git commit -m "这次改了什么"
+git push
+如果只是本机保存，前两条就够了；第三条才会上传到 GitHub。
+
+几个要点
+1. 一条命令完成： 如果你不想每次敲三条，可以这样：
+
+bash
+
+
+git add -A && git commit -m "说明" && git push
+或者把它设为别名，以后敲 git save "说明" 即可：
+
+bash
+
+
+git config --global alias.save '!git add -A && git commit -m'
+2. 第一次提交前先看看改了什么（推荐习惯）：
+
+bash
+
+
+git status          # 哪些文件变了
+git diff            # 具体改了什么
 
 【三、查看状态与历史】
 ========================================
